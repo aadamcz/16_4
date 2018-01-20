@@ -1,21 +1,5 @@
-import React from "react";
+// import React from "react";
 
-const TodoForm = ({addTodo}) => {
-	//Input tracker
-	let input;
+// const TodoForm = ???
 
-	return (
-		<div>
-			<input ref={node => {
-				input = node;
-			}} />
-			<button onClick={()=>{
-				addTodo(input.value);
-				input.value = '';
-			}} /> +
-			</button>	
-		</div>
-	);
-};
-
-export default TodoForm;
+// export default TodoForm;
