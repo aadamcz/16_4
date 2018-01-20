@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.List {
+	font-family: 'Lato', sans-serif;
+}
+
+.List li {
+	border: 2px black solid;
+	list-style-type: none;
+	padding: 1em;
+	margin: .5em;
+	background-color: #BBB;
+}
+
