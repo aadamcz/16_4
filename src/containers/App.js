@@ -35,13 +35,10 @@ class App extends React.Component {
 		return(
 			<div className={style.TodoApp}>
 				<Title todoNumber={this.state.data.length}/>
-<<<<<<< HEAD
 				<TodoList 
 					data={this.state.data}
 					remove={this.removeTodo.bind(this)}
 				/>
-=======
->>>>>>> 04acff0ac107fe62bad4a1cf678cd5ba351c2097
 			</div>
 		);
 	}
