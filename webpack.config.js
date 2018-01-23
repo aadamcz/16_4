@@ -2,10 +2,13 @@ const path = require("path");
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var UglifyJSPlugin = require("uglifyjs-webpack-plugin");
-var optimizeJSPlugin = require("optimize-js-plugin")
+var optimizeJSPlugin = require("optimize-js-plugin");
+
 
 module.exports = {
-	entry: "./src/index.js",
+	entry: [
+			"./src/index.js"
+	],
 	output: {
 		path: path.resolve(__dirname, "build"),
 		filename: "app.bundle.js"
@@ -31,8 +34,9 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new HtmlWebpackPlugin({template: 'src/index.html',filename: 'index.html',inject:'body'}),
+		new HtmlWebpackPlugin({template: 'index.html',filename: 'index.html',inject:'body'}),
 		new webpack.optimize.UglifyJsPlugin(),
-		new optimizeJSPlugin({sourceMap:false})
+		new optimizeJSPlugin({sourceMap:false}),
+		
 	]	
 };
