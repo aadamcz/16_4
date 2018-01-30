@@ -1,8 +1,8 @@
 const path = require("path");
-var webpack = require("webpack");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-var UglifyJSPlugin = require("uglifyjs-webpack-plugin");
-var optimizeJSPlugin = require("optimize-js-plugin");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const optimizeJSPlugin = require("optimize-js-plugin");
 
 
 module.exports = {
@@ -17,7 +17,10 @@ module.exports = {
 		rules: [
 			{
 				test: /\.js$/,
-				loader: "babel-loader"
+				loader: "babel-loader",
+				options: {
+					presets: ['es2015', 'react']
+				}
 			},
 			{
 				test:/\.css$/,
@@ -34,9 +37,13 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new HtmlWebpackPlugin({template: 'index.html',filename: 'index.html',inject:'body'}),
+		new HtmlWebpackPlugin({
+			template: 'src/index.html',
+			filename: 'index.html',
+			inject: 'body'
+		}),
 		new webpack.optimize.UglifyJsPlugin(),
 		new optimizeJSPlugin({sourceMap:false}),
-		
+		new webpack.HotModuleReplacementPlugin()
 	]	
 };
