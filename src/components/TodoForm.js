@@ -1,38 +1,24 @@
 import React from "react";
+import FontAwesome from "react-fontawesome";
 
-// const TodoForm = ({addTodo}) => {
-//   // Input Tracker
-//   let input;
-//   // Return JSX
-//   return (
-//     <form onSubmit={(e) => {
-//         e.preventDefault();
-//         addTodo(input.value);
-//         input.value = '';
-//       }}>
-//       <input className="form-control col-md-12" ref={node => {
-//         input = node;
-//       }} />
-//       <button>Add task</button>
-//       <br />
-//     </form>
-//   );
-// };
+const TodoForm = ({ addTodo }) => {
+    let input;
 
-// export default TodoForm;
+    return (
+        <form
+            className="style"
+            onSubmit={e => {
+            e.preventDefault();
 
-const TodoForm = ({addTodo}) => {
-  // Input Tracker
-  let input;
-  // Return JSX
-  return (
-    <form onSubmit={(e) => {
-        addTodo(input.value);
-        input.value = '';
-      }}>
-      <button>Add task</button>
-      <br />
-    </form>
+            if (input.value !== "") {
+            addTodo(input.value);
+            input.value = "";
+            }
+        }}>
+            <input ref={el => { input = el;}}
+                placeholder="Enter a todo"/>       
+            <button type="submit"><FontAwesome className="FontAwesome" name="plus" /></button> 
+        </form>
   );
 };
 

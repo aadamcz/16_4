@@ -5,6 +5,7 @@ import TodoList from "../components/TodoList";
 import TodoForm from "../components/TodoForm";
 import uuid from "uuid";
 
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -12,7 +13,7 @@ class App extends React.Component {
 			data: []
 		};
 	}
-	addTodo(val){
+	addTodo(val){ //TodoForm, dodawanie nowych elementów
 		const todo = {
 			text: val,
 			id: uuid.v4(),
